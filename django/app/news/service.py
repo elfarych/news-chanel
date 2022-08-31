@@ -131,7 +131,7 @@ def create_categories():
 
 def check_events_tg_sent():
     events = models.Event.objects.filter(tg_sent=False)
-    for event in events[:1]:
+    for event in events:
         tg_sender.send_telegram_event_message(event)
         event.tg_sent = True
         event.save()

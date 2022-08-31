@@ -4,6 +4,9 @@ import telebot
 bot = telebot.TeleBot('5336001310:AAEAEJXYqk9yRuiIZ8DDe_HPRqDla2DPAzg')
 chat_id = '-1001672957008'
 
+report_bot = telebot.TeleBot('5321716094:AAEUlf57oJnyUaoFbfaOlTManLuiAXbljiM')
+report_chat_id = '1288146416'
+
 
 def send_telegram_event_message(event):
     try:
@@ -39,3 +42,7 @@ def send_telegram_news_message(post):
         bot.send_photo(chat_id, r.content, caption=text, parse_mode="Markdown")
     except:
         return
+
+
+def send_report():
+    report_bot.send_message(report_chat_id, text='Новостной бот работает...')

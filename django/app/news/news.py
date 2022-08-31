@@ -38,7 +38,7 @@ def get_news():
 
 def check_news_tg_sent():
     news = models.Post.objects.filter(tg_sent=False)
-    for post in news[:1]:
+    for post in news:
         tg_sender.send_telegram_news_message(post)
         post.tg_sent = True
         post.save()
